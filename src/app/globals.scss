@@ -1,4 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
+
 :root {
   --primary-color: #050d27;
   --primary-color-dark: #145A8A;
@@ -161,3 +162,50 @@ video {
   overflow: hidden;
 }
 
+
+// modal
+
+.modal-team .modal-dialog {
+  @media (max-width: 991.98px) {
+    max-width: 90% !important;
+  }
+
+  .modal-content {
+    overflow: hidden;
+  }
+}
+
+.modal-social {
+  .modal-dialog {
+    @media (max-width: 991.98px) {
+      max-width: 90% !important;
+    }
+
+    .modal-content {
+      color: #fff;
+      background: linear-gradient(-157deg, #0e2063 0%, #050d27 25%, #140719 50%, #140719 75%, #391346 100%);
+
+      .modal-header {
+        border: 0;
+      }
+
+      .modal-body {
+        video {
+          width: 100%;
+        }
+
+        .carousel-indicators {
+          margin-bottom: -1rem;
+        }
+      }
+    }
+  }
+
+  &.modal-three {
+    .modal-body {
+      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

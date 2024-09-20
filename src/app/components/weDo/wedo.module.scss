@@ -1,0 +1,78 @@
+.imageGrid {
+    padding: 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    figure {
+        width: 250px;
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        cursor: pointer;
+        border-radius: 15px;
+        border-radius: 1rem;
+        align-content: center;
+        justify-content: center;
+        background-size: contain;
+        background-repeat: round;
+        transition: all 0.5s ease-in-out;
+
+        &.gridOne {
+            background-image: url("/brand_work.png");
+
+            &:hover {
+                cursor: pointer;
+                font-size: 25px;
+                font-weight: 600;
+                transform: scale(1.2);
+                background-image: url("/brand_gradient_work.png");
+            }
+
+        }
+
+        &.gridTwo {
+            background-image: url("/social_media_work.png");
+
+            &:hover {
+                cursor: pointer;
+                font-size: 25px;
+                font-weight: 600;
+                transform: scale(1.2);
+                background-image: url("/social_media_gradient_work.png");
+            }
+        }
+
+        &.gridThree {
+            background-image: url("/music_work.png");
+
+            &:hover {
+                cursor: pointer;
+                font-size: 25px;
+                font-weight: 600;
+                transform: scale(1.2);
+                background-image: url("/music_gradient_work.png");
+            }
+        }
+    }
+}
+
+.modalThree {
+    .insideContent {
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+
+        img {
+            flex: none;
+        }
+    }
+
+    .audioWrap{
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+    }
+}

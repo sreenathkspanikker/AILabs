@@ -1,10 +1,10 @@
 "use client"
 
 /* eslint-disable react/no-unescaped-entities */
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Row, Col, Container, Figure, FigureCaption } from "react-bootstrap";
+import { Container, Figure } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
@@ -13,8 +13,12 @@ import styles from './page.module.scss';
 import theme from './lib/theme.module.scss';
 
 // Components
+import WeDo from './components/weDo';
+import OurTeam from './components/OurTeam';
+import CodeAnim from './components/CodeAnim';
 import Mainframe from './components/Mainframe';
 import OurClients from './components/OurClients';
+import TextColorAnim from './components/TextColorAnim';
 
 // Images
 import Logo from '../../public/logo.svg'
@@ -32,25 +36,34 @@ export default function Home() {
 
       <section className={`${theme.section} ${styles.section1}`}>
         <Container>
-          <video className="video-responsive" autoPlay loop muted>
-            <source src="/videos/intro.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <CodeAnim />
         </Container>
       </section>
 
       <section className={`${theme.section} ${styles.section2}`}>
         <Container>
-          <Image className="img-responsive" src="/videos/second-fold.gif" alt="" width={300} height={300} />
+          <TextColorAnim />
         </Container>
       </section>
 
       <section className={`${theme.section} ${styles.section3}`}>
         <Container>
-          <video className="video-responsive" controls muted>
-            <source src="/videos/showreel.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              title="Showreel '24"
+              src="https://player.vimeo.com/video/1008072695?badge=0&autopause=0&player_id=0&app_id=58479"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+              }}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              allowFullScreen
+            />
+          </div>
         </Container>
       </section>
 
@@ -75,86 +88,14 @@ export default function Home() {
         <Image src="/BallAction_1loop.gif" alt="bg" fill />
         <Container>
           <h1 className="titles text-center">What We Do</h1>
-
-          <div className={styles.imageGrid}>
-            <Figure className={styles.gridOne} />
-            <Figure className={styles.gridTwo} />
-            <Figure className={styles.gridThree} />
-          </div>
-
+          <WeDo />
         </Container>
       </section>
 
       <section className={`${theme.section} ${styles.section6}`} id="meet-our-team">
         <Container>
           <h1 className="titles text-center">Meet Our Team</h1>
-
-          <div className={styles.teamRowOne}>
-            <Figure>
-              <div className={styles.figureImage}>
-                <Image src="/Vinod.png" alt="team" fill />
-                <FigureCaption className={styles.figCaption}>
-                  <h2>Vinod Sekhar</h2>
-                  <p>Executive Director/Co-Founder</p>
-                </FigureCaption>
-              </div>
-              <p className={styles.description}>
-                <strong>Vinod Sekhar</strong> is the Chairman of the Petra group,
-                a global conglomerate that embraces technological innovation across sectors to create positive social and
-                economic change. With his strong passion for filmmaking, Vinod has produced notable Hollywood films such as The
-                Legend of Tarzan and has won three prestigious awards at the Tapeu Golden Horse awards for his Hongkong produced
-                film The Sunny Side of the Street. Incidentally Vinod has also produced India’s first Oscar Nominated film -
-                Liars Dice. He is currently working on his own feature while mentoring Artificial to become a global Gen AI
-                powerhouse.
-              </p>
-            </Figure>
-            <Figure>
-              <div className={styles.figureImage}>
-                <Image src="/Carl.png" alt="team" fill />
-                <FigureCaption className={styles.figCaption}>
-                  <h2>Carl Savio</h2>
-                  <p>Executive Director/Co-Founder</p>
-                </FigureCaption>
-              </div>
-              <p className={`${styles.description} ${styles.alignRight}`}>
-                <strong>Carl Savio</strong> is a writer, creative technologist and
-                film director with over 20 years of experience. He is also the founder of Bluebot Digital, an award-winning
-                creative agency established in 2016 that works closely with some of India’s leading brands. With his strong
-                understanding of traditional film making techniques he’s now looking forward to create real-world value and
-                impact with Artificial Labs.
-              </p>
-            </Figure>
-          </div>
-          <div className={`${styles.teamRowOne} ${styles.teamRowTwo}`}>
-            <Figure>
-              <div className={styles.figureImage}>
-                <Image src="/Gagan.png" alt="team" fill />
-                <FigureCaption className={styles.figCaption}>
-                  <h2>Gagan Naidu</h2>
-                  <p>Senior Creative Director</p>
-                </FigureCaption>
-              </div>
-            </Figure>
-            <Figure>
-              <div className={styles.figureImage}>
-                <Image src="/Daniel.png" alt="team" fill />
-                <FigureCaption className={styles.figCaption}>
-                  <h2>Daniel Cherian</h2>
-                  <p>Studio Head</p>
-                </FigureCaption>
-              </div>
-            </Figure>
-            <Figure>
-              <div className={styles.figureImage}>
-                <Image src="/Aaron.png" alt="team" fill />
-                <FigureCaption className={styles.figCaption}>
-                  <h2>Aaron D'cruz</h2>
-                  <p>Talent Director</p>
-                </FigureCaption>
-              </div>
-            </Figure>
-          </div>
-
+          <OurTeam />
         </Container>
       </section>
 

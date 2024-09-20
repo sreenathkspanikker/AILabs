@@ -1,18 +1,15 @@
 "use client";
 
-import Link from 'next/link'
+import Link from 'next/link';
 import Image from 'next/image';
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMediaQuery } from 'react-responsive';
-import { Container } from 'react-bootstrap'
-
+import { Container } from 'react-bootstrap';
 
 import styles from "./mainframe.module.scss";
-
-// Components
 import Header from "../Header";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -25,6 +22,9 @@ const MinframeAnime = () => {
 
     useGSAP(() => {
         if (logoRef && locationCardsRef && pLogoRef) {
+            // Disable scroll initially
+            document.body.style.overflow = "hidden";
+
             // Hide pLogoRef initially
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
 
@@ -42,7 +42,7 @@ const MinframeAnime = () => {
                     // Play the logoRef video after the width animation completes
                     logoRef.current.play();
 
-                    // Delay further actions for 2 seconds after video starts playing
+                    // Delay further actions for 3 seconds after video starts playing
                     gsap.delayedCall(3, () => {
                         gsap.to(logoRef.current, {
                             duration: 1,
@@ -75,6 +75,9 @@ const MinframeAnime = () => {
                                         once: true,
                                     });
                                 });
+
+                                // Enable scroll after the animation is fully completed
+                                document.body.style.overflowY = "auto";
                             },
                         });
                     });
@@ -165,9 +168,6 @@ const MinframeAnime = () => {
                     </>
                 )}
             </Container>
-
-
-
         </div>
     );
 };

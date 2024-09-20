@@ -1,0 +1,221 @@
+.teamRowOne {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+
+    figure {
+        margin: 0;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 2rem;
+
+        .figureImage {
+            width: 250px;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            background: #000;
+            box-shadow: 0 70px 63px -60px #000;
+
+            img {
+                transition: all ease-in-out 0.6s;
+            }
+
+            .figCaption {
+                background-color: rgba(black, 0.4);
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+
+                h2 {
+                    text-align: left;
+                    color: #fff;
+                    margin-bottom: 0;
+                    font-weight: 600;
+                    transition: opacity 1s;
+                    opacity: 0;
+                    font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem);
+                }
+
+                h3 {
+                    text-align: left;
+                    color: #d3d3d3;
+                    font-weight: 600;
+                    font-size: 14px;
+                    opacity: 0;
+                    transition: opacity 1s;
+                }
+
+                p {
+                    text-align: left;
+                    color: #d3d3d3;
+                    font-weight: 600;
+                    font-size: 12px;
+                    opacity: 0;
+                    transition: opacity 1s;
+                    margin-bottom: 1rem;
+                }
+
+                button {
+                    background-color: #0077b5;
+                    border-radius: 3px !important;
+
+                    &:hover {
+                        background-color: #bc2a8d;
+                    }
+                }
+            }
+
+        }
+
+
+        .description {
+            visibility: 0;
+            opacity: 0;
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 100%;
+            width: 25vw;
+            text-align: left;
+            border: 3px solid white;
+            padding: 1rem;
+            margin-inline: 1rem;
+            border-radius: 25px;
+            transition: opacity 1s;
+
+            @media (max-width: 991.98px) {
+                position: static;
+                width: 100%;
+            }
+
+            strong {
+                text-transform: uppercase;
+                display: block;
+                font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+                color: #a3a3a3;
+            }
+
+            &.alignRight {
+                right: auto;
+                left: 100%;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2) translateX(15px);
+            }
+
+            .figCaption {
+                opacity: 1;
+
+                h2,
+                h3,
+                p {
+                    opacity: 1;
+                }
+            }
+
+            .description {
+                opacity: 1;
+                visibility: visible;
+                display: block
+            }
+        }
+    }
+
+}
+
+.teamRowTwo {
+    @extend .teamRowOne;
+    z-index: 1;
+
+    figure {
+        width: 200px;
+        height: 300px;
+    }
+}
+
+.modalTeam {
+    .modalBody {
+        padding: 0;
+        display: flex;
+        position: relative;
+
+        @media (max-width: 767.98px) {
+            padding: 1rem;
+        }
+
+        button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 1rem;
+            z-index: 2;
+        }
+
+        @media (max-width: 767.98px) {
+            flex-direction: column;
+        }
+
+        figure {
+            position: relative;
+            flex: none;
+            width: 350px;
+            height: 450px;
+            flex: none;
+            margin: 0;
+            overflow: hidden;
+
+            img {
+                object-fit: cover;
+            }
+
+            @media (max-width: 767.98px) {
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        article {
+            padding: 2rem;
+            color: #000;
+
+            @media (max-width: 767.98px) {
+                padding: 0;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            p {
+                font-size: 0.8em;
+                height: 300px;
+                overflow-y: auto;
+
+                @media (max-width: 767.98px) {
+                    height: auto;
+                }
+            }
+
+        }
+    }
+}
