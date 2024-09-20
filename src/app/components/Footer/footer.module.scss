@@ -6,14 +6,16 @@
     .footerTop {
         padding-block: 3rem;
 
-        .row{
+        .row {
             flex-wrap: wrap;
-            @include media-breakpoint-down(md) {
+
+            @media (max-width: 991.98px) {
                 flex-direction: column;
             }
+
         }
 
-        svg{
+        svg {
             max-width: 200px;
         }
 
