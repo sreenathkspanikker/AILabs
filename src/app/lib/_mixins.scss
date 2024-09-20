@@ -1,0 +1,20 @@
+@mixin line-clamp($lines) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    // Fallback for other browsers
+    display: block;
+    max-height: calc(#{$lines} * 1.2em); // Assuming 1.2em as line height, adjust if needed
+    line-height: 1.2em; // Adjust this line height to match the one used in your design
+    position: relative;
+    word-wrap: break-word;
+    
+    // Optional for webkit based browsers
+    @supports (-webkit-line-clamp: 1) {
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+    }
+  }

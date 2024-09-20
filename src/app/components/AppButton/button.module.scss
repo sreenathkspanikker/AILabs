@@ -1,0 +1,137 @@
+.button {
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0 !important;
+    transition: background-color 0.3s ease;
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: #fff;
+
+    &:hover {
+        background-color: var(--primary-color-dark);
+        /* Darker shade on hover */
+    }
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+
+    &:hover {
+        background-color: var(--secondary-color-dark);
+        /* Darker shade on hover */
+    }
+}
+
+.third {
+    background-color: #fff;
+    border: 1px solid #fff !important;
+    color: var(--secondary-color);
+
+    &:hover {
+        background-color: transparent;
+        color: #fff;
+    }
+}
+
+.link {
+    padding: 0;
+    text-decoration: none;
+    background-color: #fff;
+    color: var(--secondary-color);
+    border: 1px solid #fff !important;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--primary-color);
+
+        >svg {
+            path {
+                stroke: var(--primary-color);
+            }
+        }
+    }
+}
+
+.outline {
+    background-color: transparent;
+    border: 1px solid white !important;
+    color: white;
+
+    svg {
+        path {
+            stroke: white;
+        }
+    }
+
+    &:hover {
+        background-color: white;
+        color: var(--secondary-color);
+        border-color: white !important;
+
+        svg {
+            path {
+                stroke: var(--secondary-color);
+                ;
+            }
+        }
+    }
+}
+
+.outline-dark {
+    background-color: transparent;
+    border: 1px solid var(--secondary-color) !important;
+    color: var(--secondary-color);
+
+    svg {
+        path {
+            stroke: var(--secondary-color);
+        }
+    }
+
+    &:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        border-color: var(--secondary-color) !important;
+
+        svg {
+            path {
+                stroke: white;
+            }
+        }
+    }
+}
+
+.hamburger {
+    width: 80px;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    padding: 0 !important;
+    background-color: transparent !important;
+    transition: gap 0.2s ease, span 0.2s ease;
+
+    span {
+        display: block;
+        width: 3rem;
+        height: 1px;
+        background-color: #fff;
+        transition: height 0.2s ease;
+    }
+
+    &:hover {
+        gap: 0.7rem;
+
+        span {
+            height: 2px;
+        }
+    }
+}

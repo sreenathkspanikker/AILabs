@@ -1,0 +1,36 @@
+.footer {
+    background-color: #050d27;
+    margin-top: 2rem;
+    color: #fff;
+
+    .footerTop {
+        padding-block: 3rem;
+
+        .row{
+            flex-wrap: wrap;
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+            }
+        }
+
+        svg{
+            max-width: 200px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+
+
+    .footerBottom {
+        text-align: center;
+        padding-block: 1rem;
+        border-top: 1px solid rgba(white, 0.3);
+    }
+}
