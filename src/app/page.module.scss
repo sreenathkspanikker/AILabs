@@ -4,6 +4,10 @@
 
     .section2 {
         padding-block: 10rem;
+
+        @media (max-width: 767.98px) {
+            padding: 0;
+        }
     }
 
     .section4 {
@@ -11,6 +15,10 @@
             line-height: 3rem;
             letter-spacing: 0.5px;
             font-size: calc(1.325rem + .9vw);
+
+            @media (max-width: 767.98px) {
+                text-align: center;
+            }
         }
     }
 

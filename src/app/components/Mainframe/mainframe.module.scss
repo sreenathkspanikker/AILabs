@@ -26,11 +26,12 @@
                 z-index: 2;
                 pointer-events: none;
 
-                .logoVid{
+                .logoVid {
                     display: none;
                 }
             }
-            &.subLogo{
+
+            &.subLogo {
                 position: fixed;
                 width: 135px;
                 opacity: 0;
@@ -39,15 +40,17 @@
                 z-index: 2;
             }
 
-            &.location{
+            &.location {
                 margin-left: -2rem;
                 top: 0;
                 bottom: 0;
                 margin: auto;
                 opacity: 0;
+                left: 0;
+                right: 0;
             }
 
-            &.locationAnime{
+            &.locationAnime {
                 top: 0;
                 bottom: 0;
                 margin: auto;

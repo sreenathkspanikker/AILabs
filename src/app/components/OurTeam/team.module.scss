@@ -70,11 +70,19 @@
                 }
 
                 button {
-                    background-color: #0077b5;
-                    border-radius: 3px !important;
+                    background: none !important;
+                    text-decoration: underline !important;
+                    color: white;
+                    border: 0 !important;
+                    padding: 0;
+                    text-align: left;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    transition: opacity 1s;
+                    opacity: 0;
 
                     &:hover {
-                        background-color: #bc2a8d;
+                        color: #bc2a8d;
                     }
                 }
             }
@@ -125,7 +133,8 @@
 
                 h2,
                 h3,
-                p {
+                p,
+                button {
                     opacity: 1;
                 }
             }
@@ -145,8 +154,16 @@
     z-index: 1;
 
     figure {
-        width: 200px;
-        height: 300px;
+        .figureImage {
+            width: 200px;
+            height: 300px;
+
+            @media (max-width: 575.98px) {
+                width: 250px;
+                height: 350px;
+            }
+        }
+
     }
 }
 

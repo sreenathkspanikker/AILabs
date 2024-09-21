@@ -39,11 +39,13 @@ const TypingText = () => {
 
   return (
     <div className={styles.typingText} ref={textRef}>
-      {text.split("").map((char, i) => (
-        <span key={i} style={{ display: "inline-block" }}>
-          {char}
-        </span>
-      ))}
+      <div>
+        {text.split("").map((char, i) => (
+          <span key={i} style={{ display: "inline-block" }}>
+            {char}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };

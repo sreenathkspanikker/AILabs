@@ -1,13 +1,23 @@
-import React from 'react'
-import AppButton from '../AppButton'
+import { useState } from "react";
+import AppButton from '../AppButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Humburger = ({ onClick }: any) => {
+const HamburgerButton = ({ onClick }: any) => {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleClick = () => {
+        setIsActive(!isActive);
+        if (onClick) {
+            onClick(); // Trigger the passed onClick function
+        }
+    };
+
     return (
-        <AppButton variant='hamburger' onClick={onClick}>
-            <span></span>
-            <span></span>
+        <AppButton variant="hamburger" onClick={handleClick}>
+            <FontAwesomeIcon icon={isActive ? faTimes : faBars} className="fa-fw" />
         </AppButton>
-    )
-}
+    );
+};
 
-export default Humburger
+export default HamburgerButton;

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -23,8 +23,10 @@ const MinframeAnime = () => {
     useGSAP(() => {
         if (logoRef && locationCardsRef && pLogoRef) {
             // Disable scroll initially
-            document.body.style.overflow = "hidden";
-
+            if (!isSmallDevice) {
+                // Apply overflow hidden only for larger screens
+                document.body.style.overflow = "hidden";
+            }
             // Hide pLogoRef initially
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
 

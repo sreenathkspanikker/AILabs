@@ -22,18 +22,18 @@ const OurTeam = () => {
         <>
 
             <div className={styles.teamRowOne}>
-                <Figure>
+                <Figure onClick={() => handleShow('vinod')}>
                     <div className={styles.figureImage}>
                         <Image src="/Vinod.png" alt="team" fill />
                         <FigureCaption className={styles.figCaption}>
                             <h2>Vinod Sekhar</h2>
                             <h3>Executive Director/Co-Founder</h3>
                             <p><strong>Vinod Sekhar</strong> is the Chairman of the Petra group, economic change...</p>
-                            <AppButton onClick={() => handleShow('vinod')}>Read more</AppButton>
+                            <AppButton variant="link" >Read more</AppButton>
                         </FigureCaption>
                     </div>
                 </Figure>
-                <Figure>
+                <Figure onClick={() => handleShow('carl')}>
                     <div className={styles.figureImage}>
                         <Image src="/Carl.png" alt="team" fill />
                         <FigureCaption className={styles.figCaption}>
@@ -41,7 +41,7 @@ const OurTeam = () => {
                             <h3>Executive Director/Co-Founder</h3>
                             <p> <strong>Carl Savio</strong> is a writer, reative technologist and
                                 film director with over 20 years of experience...</p>
-                            <AppButton onClick={() => handleShow('carl')}>Read more</AppButton>
+                            <AppButton variant="link" >Read more</AppButton>
                         </FigureCaption>
                     </div>
                 </Figure>
