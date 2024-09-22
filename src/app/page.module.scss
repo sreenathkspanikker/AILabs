@@ -1,12 +1,18 @@
 @import './lib/mixins';
 
 .home {
-
+    position: relative;
     .section2 {
         padding-block: 10rem;
 
         @media (max-width: 767.98px) {
             padding: 0;
+        }
+    }
+
+    .section3 {
+        >div {
+            position: relative;
         }
     }
 

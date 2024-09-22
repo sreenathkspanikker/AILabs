@@ -8,39 +8,40 @@
     figure {
         width: 250px;
         height: 400px;
-        display: flex;
-        flex-wrap: wrap;
         cursor: pointer;
-        border-radius: 15px;
+        margin-bottom: 2rem;
         border-radius: 1rem;
-        align-content: center;
-        justify-content: center;
         background-size: contain;
         background-repeat: round;
-        transition: all 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out, background-image 0.5s ease-in-out;
 
         &.gridOne {
             background-image: url("/brand_work.png");
 
             &:hover {
-                cursor: pointer;
                 font-size: 25px;
                 font-weight: 600;
                 transform: scale(1.2);
                 background-image: url("/brand_gradient_work.png");
-            }
 
+                @media (max-width: 1199.98px) {
+                    transform: scale(1.07);
+                }
+            }
         }
 
         &.gridTwo {
             background-image: url("/social_media_work.png");
 
             &:hover {
-                cursor: pointer;
                 font-size: 25px;
                 font-weight: 600;
                 transform: scale(1.2);
                 background-image: url("/social_media_gradient_work.png");
+
+                @media (max-width: 1199.98px) {
+                    transform: scale(1.07);
+                }
             }
         }
 
@@ -48,11 +49,14 @@
             background-image: url("/music_work.png");
 
             &:hover {
-                cursor: pointer;
                 font-size: 25px;
                 font-weight: 600;
                 transform: scale(1.2);
                 background-image: url("/music_gradient_work.png");
+
+                @media (max-width: 1199.98px) {
+                    transform: scale(1.07);
+                }
             }
         }
     }
@@ -60,9 +64,9 @@
 
 .modalThree {
     .insideContent {
-        gap: 1rem;
         display: flex;
         align-items: center;
+        gap: 1rem;
 
         @media (max-width: 767.98px) {
             flex-direction: column;
@@ -75,10 +79,10 @@
     }
 
     .audioWrap {
-        gap: 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 1rem;
 
         @media (max-width: 767.98px) {
             flex-direction: column;

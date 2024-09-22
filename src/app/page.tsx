@@ -4,7 +4,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Container, Figure } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
@@ -15,9 +15,11 @@ import theme from './lib/theme.module.scss';
 // Components
 import WeDo from './components/weDo';
 import OurTeam from './components/OurTeam';
+import ShowReel from './components/ShowReel';
 import CodeAnim from './components/CodeAnim';
 import Mainframe from './components/Mainframe';
 import OurClients from './components/OurClients';
+import ScrollToTop from './components/ScrollToTop';
 import TextColorAnim from './components/TextColorAnim';
 
 // Images
@@ -34,7 +36,7 @@ export default function Home() {
     <main className={styles.home}>
       <Mainframe />
 
-      <section className={`${theme.section} ${styles.section1}`}>
+      <section className={`${theme.section} ${styles.section1}`} id="section2">
         <Container>
           <CodeAnim />
         </Container>
@@ -48,27 +50,12 @@ export default function Home() {
 
       <section className={`${theme.section} ${styles.section3}`}>
         <Container>
-          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
-            <iframe
-              title="Showreel '24"
-              src="https://player.vimeo.com/video/1008072695?badge=0&autopause=0&player_id=0&app_id=58479"
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-              }}
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-              allowFullScreen
-            />
-          </div>
+          <ShowReel />
         </Container>
       </section>
 
       <section className={`${theme.section} ${styles.section4}`}>
-        <Container>
+        <Container >
           <h1 className="titles text-center">About Us</h1>
           <h2>
             Artificial Labs stemmed from a hunch - actually more like an
@@ -116,6 +103,9 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      {/* SCROLL TOP */}
+      <ScrollToTop />
 
     </main>
   );

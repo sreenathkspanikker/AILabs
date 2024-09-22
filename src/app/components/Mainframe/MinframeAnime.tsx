@@ -2,21 +2,25 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRef } from "react";
 import { gsap } from "gsap";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useMediaQuery } from 'react-responsive';
 import { Container } from 'react-bootstrap';
+import { useMediaQuery } from 'react-responsive';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./mainframe.module.scss";
 import Header from "../Header";
+import AppButton from '../AppButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const MinframeAnime = () => {
     const logoRef = useRef<any>(null);
     const pLogoRef = useRef<any>(null);
+    const arrowDown = useRef<any>(null);
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
 
@@ -29,6 +33,9 @@ const MinframeAnime = () => {
             }
             // Hide pLogoRef initially
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
+
+            // Hide button down arrow initially
+            gsap.set(arrowDown.current, { autoAlpha: 0 });
 
             // Initial animation for the logo video (logoRef)
             gsap.to(logoRef.current, {
@@ -80,6 +87,10 @@ const MinframeAnime = () => {
 
                                 // Enable scroll after the animation is fully completed
                                 document.body.style.overflowY = "auto";
+
+                                // Ensure the arrow down button is visible after enabling scroll
+                                gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
+
                             },
                         });
                     });
@@ -169,6 +180,9 @@ const MinframeAnime = () => {
                         </video>
                     </>
                 )}
+                <Link href="#section2" ref={arrowDown} className={styles.arrowDown}>
+                    <FontAwesomeIcon icon={faArrowDown} className="fa-fw" />
+                </Link>
             </Container>
         </div>
     );
