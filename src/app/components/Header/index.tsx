@@ -31,9 +31,12 @@ const Header = () => {
       {isSmallDevice ? (
         <Container className={styles.container}>
           <div className={styles.headerTop}>
-            <Navbar.Brand className={styles.navLogo}>
-              <Image src="/logo.gif" className='img-responsive' width={800} height={319} alt='logo' />
-            </Navbar.Brand>
+            <div className={styles.logowrap}>
+              <Navbar.Brand className={styles.navLogo}>
+                <Image src="/logo.gif" className='img-responsive' width={800} height={319} alt='logo' />
+              </Navbar.Brand>
+              <Image src="/logo-petra.gif" className={`img-responsive ${styles.petraLogo}`} width={400} height={219} alt='ptralogo' />
+            </div>
             <Humburger onClick={handleClick} />
           </div>
           {isMenu && (

@@ -1,28 +1,44 @@
 .waveText {
   font-size: 4rem;
-  font-weight: 900; /* Bold text */
-  color: #fff; /* Fallback text color */
+  font-weight: 900;
+  /* Bold text */
+  color: #fff;
+  /* Fallback text color */
   font-weight: 900;
   text-align: center;
   color: #68d0e0;
+
+  @media (max-width: 1199.98px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 991.98px) {
+    font-size: 2rem;
+  }
 
   @supports (background-clip: text) or (-webkit-background-clip: text) {
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     background-image: url("/wave.png");
-    background-size: 300%; /* Enlarged background for smooth movement */
-    background-position: 50% 50%; /* Starting at the left */
-    animation: animateWave 9s infinite linear reverse; /* Smooth left-to-right animation */
+    background-size: 300%;
+    /* Enlarged background for smooth movement */
+    background-position: 50% 50%;
+    /* Starting at the left */
+    animation: animateWave 9s infinite linear reverse;
+    /* Smooth left-to-right animation */
   }
 }
 
 /* Keyframes for left-to-right motion */
 @keyframes animateWave {
   0% {
-    background-position: 50% 50%; /* Start at the left */
+    background-position: 50% 50%;
+    /* Start at the left */
   }
+
   100% {
-    background-position: 100% 50%; /* Move to the right */
+    background-position: 100% 50%;
+    /* Move to the right */
   }
 }

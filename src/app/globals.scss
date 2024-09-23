@@ -148,6 +148,19 @@ video {
   max-width: 100%;
 }
 
+.slick-next {
+  z-index: 9;
+  @media (max-width: 767.98px) {
+    right: 0;
+  }
+}
+.slick-prev {
+  z-index: 9;
+  @media (max-width: 767.98px) {
+    left: 0;
+  }
+}
+
 .logo {
   position: relative;
   top: 50%;

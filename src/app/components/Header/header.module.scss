@@ -131,13 +131,27 @@
                 align-items: center;
                 justify-content: space-between;
 
-                .navLogo {
-                    max-width: 200px;
-
-                    img {
-                        position: relative !important;
+                .logowrap{
+                    max-width: 350px;
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    .navLogo {
+                        max-width: 200px;
+    
+                        img {
+                            position: relative !important;
+                        }
                     }
+
+                    .petraLogo{
+                        position: relative;
+                        max-width: 100px;
+                    }
+
                 }
+
+
             }
 
             .navbar {
