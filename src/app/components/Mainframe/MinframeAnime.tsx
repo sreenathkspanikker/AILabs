@@ -39,7 +39,7 @@ const MinframeAnime = () => {
 
             // Initial animation for the logo video (logoRef)
             gsap.to(logoRef.current, {
-                duration: 3,
+                duration: 1,
                 keyframes: {
                     "0%": { width: 0, opacity: 0 },
                     "70%": { width: '10rem,', opacity: 0.4 },
@@ -63,7 +63,7 @@ const MinframeAnime = () => {
                             ease: "power2.inOut",
                             onComplete: function () {
                                 // Show pLogoRef and adjust its position and width
-                                gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 1 });
+                                gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
                                 gsap.to(pLogoRef.current, {
                                     width: "10%",
                                     top: "20px",
