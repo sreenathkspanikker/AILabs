@@ -57,7 +57,7 @@ const MinframeAnime = () => {
                             duration: 1,
                             position: "relative",
                             width: "15%",
-                            top: "0",
+                            top: "-5px",
                             left: "20px",
                             transform: "translate(0, 0)",
                             ease: "power2.inOut",
@@ -116,7 +116,7 @@ const MinframeAnime = () => {
                     gsap.to(logoRef.current, {
                         duration: 1,
                         width: "15%",
-                        top: "0",
+                        top: "-5px",
                         left: "20px",
                         transform: "translate(0, 0)",
                         ease: "power2.inOut",
@@ -175,7 +175,7 @@ const MinframeAnime = () => {
                             <source src="./videos/petra-logo.webm" />
                         </video>
 
-                        <video className={styles.location} ref={locationCardsRef} autoPlay muted>
+                        <video className={styles.location} ref={locationCardsRef} autoPlay muted loop>
                             <source src="./videos/weblocation1.webm" type="video/webm" />
                         </video>
                     </>

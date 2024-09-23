@@ -79,7 +79,7 @@ const OurTeam = () => {
             {/* MODAL */}
             <Modal show={show} size="lg" onHide={handleClose} centered className={`${styles.modalTeam} modal-team`}>
                 <Modal.Body className={styles.modalBody}>
-                <AppButton variant="close" onClick={handleClose} />
+                    <AppButton variant="close" onClick={handleClose} />
                     <Figure>
                         {modalData === "vinod" ? <Image src="/Vinod.png" alt="team" fill /> : <Image src="/Carl.png" alt="team" fill />}
                     </Figure>

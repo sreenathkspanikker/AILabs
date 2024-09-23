@@ -6,18 +6,33 @@
     .footerTop {
         padding-block: 3rem;
 
+        @media (max-width: 575.98px) {
+            padding: 3rem 2rem;
+        }
+
+
         .row {
             flex-wrap: wrap;
 
-            @media (max-width: 991.98px) {
+            @media (max-width: 575.98px) {
                 flex-direction: column;
-                gap: 3rem;
+                gap: 4rem;
             }
 
         }
 
         svg {
             max-width: 200px;
+            display: block;
+
+            @media (max-width: 575.98px) {
+                margin: 0 auto;
+            }
+        }
+
+        h5 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         h3 {
@@ -27,6 +42,12 @@
 
         p {
             margin-bottom: 1rem;
+            font-size: 16px;
+
+            a {
+                text-decoration: underline;
+                color: blue;
+            }
         }
     }
 
@@ -35,5 +56,10 @@
         text-align: center;
         padding-block: 1rem;
         border-top: 1px solid rgba(white, 0.3);
+
+        @media (max-width: 575.98px) {
+            padding: 1rem 2rem;
+        }
+
     }
 }

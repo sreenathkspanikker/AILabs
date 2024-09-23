@@ -214,6 +214,11 @@ video {
     }
   }
 
+  .carousel-control-prev, .carousel-control-next{
+    height: 50%;
+    margin: auto;
+  }
+
   &.modal-three {
     .modal-body {
       gap: 1rem;

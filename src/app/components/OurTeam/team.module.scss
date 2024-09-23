@@ -172,6 +172,7 @@
         padding: 0;
         display: flex;
         position: relative;
+        background-color: #145A8A;
 
         @media (max-width: 767.98px) {
             padding: 1rem;
@@ -183,6 +184,7 @@
             top: 0;
             margin: 1rem;
             z-index: 2;
+            color: white;
         }
 
         @media (max-width: 767.98px) {
@@ -213,7 +215,7 @@
 
         article {
             padding: 2rem;
-            color: #000;
+            color: white;
 
             @media (max-width: 767.98px) {
                 padding: 0;
@@ -221,10 +223,11 @@
 
             h3 {
                 font-size: 1em;
+                margin-bottom: 1rem;
             }
 
             p {
-                font-size: 0.8em;
+                font-size: 0.85em;
                 height: 300px;
                 overflow-y: auto;
 

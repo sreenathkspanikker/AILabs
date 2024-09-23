@@ -8,6 +8,10 @@
   text-align: center;
   color: #68d0e0;
 
+  @media (min-width: 1400px) {
+    font-size: 3.3rem;
+  }
+
   @media (max-width: 1199.98px) {
     font-size: 3rem;
   }
