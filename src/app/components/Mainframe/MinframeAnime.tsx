@@ -26,18 +26,13 @@ const MinframeAnime = () => {
 
     useGSAP(() => {
         if (logoRef && locationCardsRef && pLogoRef) {
-            // Disable scroll initially
             if (!isSmallDevice) {
-                // Apply overflow hidden only for larger screens
                 document.body.style.overflow = "hidden";
             }
-            // Hide pLogoRef initially
+
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
+            gsap.set(arrowDown.current, { autoAlpha: 1 });
 
-            // Hide button down arrow initially
-            gsap.set(arrowDown.current, { autoAlpha: 0 });
-
-            // Initial animation for the logo video (logoRef)
             gsap.to(logoRef.current, {
                 duration: 1,
                 keyframes: {
@@ -48,10 +43,7 @@ const MinframeAnime = () => {
                 stagger: 0.2,
                 ease: "power2.inOut",
                 onComplete: function () {
-                    // Play the logoRef video after the width animation completes
                     logoRef.current.play();
-
-                    // Delay further actions for 3 seconds after video starts playing
                     gsap.delayedCall(3, () => {
                         gsap.to(logoRef.current, {
                             duration: 1,
@@ -62,7 +54,6 @@ const MinframeAnime = () => {
                             transform: "translate(0, 0)",
                             ease: "power2.inOut",
                             onComplete: function () {
-                                // Show pLogoRef and adjust its position and width
                                 gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
                                 gsap.to(pLogoRef.current, {
                                     width: "10%",
@@ -72,7 +63,6 @@ const MinframeAnime = () => {
                                     ease: "power2.inOut",
                                 });
 
-                                // Start cards animation when logo animation completes
                                 locationCardsRef.current.play();
                                 const locationCards = gsap.utils.toArray([locationCardsRef.current, pLogoRef.current]);
                                 locationCards.forEach((card: any) => {
@@ -85,19 +75,14 @@ const MinframeAnime = () => {
                                     });
                                 });
 
-                                // Enable scroll after the animation is fully completed
                                 document.body.style.overflowY = "auto";
-
-                                // Ensure the arrow down button is visible after enabling scroll
                                 gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
-
                             },
                         });
                     });
                 },
             });
 
-            // ScrollTrigger to animate logoRef on scroll
             ScrollTrigger.create({
                 trigger: logoRef.current,
                 start: "top top",
@@ -134,16 +119,24 @@ const MinframeAnime = () => {
                 },
             });
 
-            // Initial hiding of the cards
+            // ScrollTrigger to hide arrowDown when scrolling down
+            ScrollTrigger.create({
+                trigger: "#section2", // or any other element you want as a reference for the scroll point
+                start: "top bottom",
+                end: "top top",
+                onEnter: () => gsap.to(arrowDown.current, { autoAlpha: 0, duration: 0.5 }),
+                onLeaveBack: () => gsap.to(arrowDown.current, { autoAlpha: 1, duration: 0.5 }),
+            });
+
             gsap.set([locationCardsRef.current], { autoAlpha: 0 });
 
             gsap.to(locationCardsRef.current, {
                 scrollTrigger: {
                     trigger: locationCardsRef.current,
-                    start: "top center", // Adjust as needed
-                    end: "bottom top", // Adjust as needed
+                    start: "top center",
+                    end: "bottom top",
                     scrub: 3,
-                    markers: false, // Remove this line to hide markers
+                    markers: false,
                     onLeave: () => gsap.to([locationCardsRef.current, pLogoRef.current], { autoAlpha: 0, duration: 2 }),
                 },
                 autoAlpha: 0,
@@ -151,7 +144,7 @@ const MinframeAnime = () => {
             });
 
             return () => {
-                ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Cleanup on unmount
+                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
             };
         }
     }, []);

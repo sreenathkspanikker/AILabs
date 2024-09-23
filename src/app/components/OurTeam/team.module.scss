@@ -172,7 +172,7 @@
         padding: 0;
         display: flex;
         position: relative;
-        background-color: #145A8A;
+        background-color: #000;
 
         @media (max-width: 767.98px) {
             padding: 1rem;
@@ -185,6 +185,8 @@
             margin: 1rem;
             z-index: 2;
             color: white;
+            background-color: white;
+            padding: 0.5rem;
         }
 
         @media (max-width: 767.98px) {
