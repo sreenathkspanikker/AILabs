@@ -33,6 +33,7 @@ const MinframeAnime = () => {
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
             gsap.set(arrowDown.current, { autoAlpha: 1 });
 
+            // Logo Animation
             gsap.to(logoRef.current, {
                 duration: 1,
                 keyframes: {
@@ -48,7 +49,7 @@ const MinframeAnime = () => {
                         gsap.to(logoRef.current, {
                             duration: 1,
                             position: "relative",
-                            width: "15%",
+                            width: "165px",
                             top: "-5px",
                             left: "20px",
                             transform: "translate(0, 0)",
@@ -56,13 +57,14 @@ const MinframeAnime = () => {
                             onComplete: function () {
                                 gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
                                 gsap.to(pLogoRef.current, {
-                                    width: "10%",
-                                    top: "20px",
-                                    left: "calc(20px + 17%)",
+                                    width: "100px",
+                                    top: "12px",
+                                    left: "calc(20px + 14%)",
                                     transform: "translate(0, 0)",
                                     ease: "power2.inOut",
                                 });
 
+                                // Start playing locationCardsRef video only after the logo animation completes
                                 locationCardsRef.current.play();
                                 const locationCards = gsap.utils.toArray([locationCardsRef.current, pLogoRef.current]);
                                 locationCards.forEach((card: any) => {
@@ -83,6 +85,7 @@ const MinframeAnime = () => {
                 },
             });
 
+            // ScrollTrigger for the logo
             ScrollTrigger.create({
                 trigger: logoRef.current,
                 start: "top top",
@@ -100,7 +103,7 @@ const MinframeAnime = () => {
                 onLeave: () => {
                     gsap.to(logoRef.current, {
                         duration: 1,
-                        width: "15%",
+                        width: "165px",
                         top: "-5px",
                         left: "20px",
                         transform: "translate(0, 0)",
@@ -110,8 +113,8 @@ const MinframeAnime = () => {
                 onEnter: () => {
                     gsap.to(logoRef.current, {
                         duration: 1,
-                        width: "15%",
-                        top: "15px",
+                        width: "165px",
+                        top: "-5px",
                         left: "20px",
                         transform: "translate(0, 0)",
                         ease: "power2.inOut",
@@ -168,7 +171,7 @@ const MinframeAnime = () => {
                             <source src="./videos/petra-logo.webm" />
                         </video>
 
-                        <video className={styles.location} ref={locationCardsRef} autoPlay muted loop>
+                        <video className={styles.location} ref={locationCardsRef} muted loop>
                             <source src="./videos/weblocation1.webm" type="video/webm" />
                         </video>
                     </>

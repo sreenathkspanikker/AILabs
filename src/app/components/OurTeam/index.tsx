@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import { useState } from 'react';
 import { Figure, FigureCaption, Modal } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 import styles from './team.module.scss';
 
@@ -79,7 +81,9 @@ const OurTeam = () => {
             {/* MODAL */}
             <Modal show={show} size="lg" onHide={handleClose} centered className={`${styles.modalTeam} modal-team`}>
                 <Modal.Body className={styles.modalBody}>
-                    <AppButton variant="close" onClick={handleClose} />
+                    <AppButton variant="close" onClick={handleClose} >
+                        <FontAwesomeIcon icon={faClose} className="fa-fw" />
+                    </AppButton>
                     <Figure>
                         {modalData === "vinod" ? <Image src="/Vinod.png" alt="team" fill /> : <Image src="/Carl.png" alt="team" fill />}
                     </Figure>

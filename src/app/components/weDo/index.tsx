@@ -50,7 +50,7 @@ const WeDo = () => {
                     <Modal.Title>Social Media Content</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Carousel>
+                    <Carousel interval={null}>
                         {videosForModal1.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
                                 <video controls muted>

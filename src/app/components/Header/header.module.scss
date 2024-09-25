@@ -42,7 +42,7 @@
 
             a {
                 padding: 0.5rem;
-                font-size: 1.5em;
+                font-size: 1em;
                 position: relative;
                 transition: all ease-in-out .2s;
 
@@ -120,7 +120,7 @@
     }
 
     &.smallDevice {
-        height: 94px;
+        height: 60px;
 
         .container {
             padding: 0.5rem 1rem;
@@ -132,21 +132,22 @@
                 justify-content: space-between;
 
                 .logowrap{
-                    max-width: 350px;
+                    max-width: 250px;
                     display: flex;
-                    gap: 1rem;
+                    gap: 0.5rem;
                     align-items: center;
                     .navLogo {
-                        max-width: 200px;
+                        max-width: 135px;
     
                         img {
+                            width: 100% !important;
                             position: relative !important;
                         }
                     }
 
                     .petraLogo{
                         position: relative;
-                        max-width: 100px;
+                        max-width: 80px;
                     }
 
                 }

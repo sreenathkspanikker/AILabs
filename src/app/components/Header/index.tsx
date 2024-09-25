@@ -6,11 +6,16 @@ import React, { useState, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive';
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Image from 'next/image';
+import { gsap } from 'gsap';
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import styles from './header.module.scss'
 
 // Components
 import Humburger from './Humburger'
+
+gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger plugin
 
 const Header = () => {
   const [isMenu, setMenu] = useState<boolean>(false);
@@ -22,7 +27,37 @@ const Header = () => {
     setMounted(true);
   }, []);
 
+  // Toggle menu
   const handleClick = () => setMenu((prev) => !prev);
+
+  // GSAP effect to hide/show the logo on scroll
+  useGSAP(() => {
+    const logo = document.querySelector(`.${styles.petraLogo}`); // Select the logo
+
+    gsap.to(logo, {
+      y: -100, // Move the logo up to hide it
+      opacity: 0,
+      ease: "power2.out",
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top+=100 top", // Start 100px from the top
+        end: "bottom",
+        toggleActions: "play none reverse none", // Play when scrolling down, reverse when scrolling up
+        scrub: true,
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: document.body,
+      start: "top+=10 top",
+      end: "bottom",
+      onEnterBack: () => gsap.to(logo, { y: 0, opacity: 1, duration: 0.5 }),
+      onLeave: () => gsap.to(logo, { y: -100, opacity: 0, duration: 0.5 }),
+    });
+
+    return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  }, [mounted]);
 
   if (!mounted) return null; // Avoid rendering until mounted
 
