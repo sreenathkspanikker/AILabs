@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Figure, Modal, Carousel } from "react-bootstrap";
 import styles from './wedo.module.scss';
 import AppButton from '../AppButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 const WeDo = () => {
     const [show, setShow] = useState(false);
@@ -46,8 +48,11 @@ const WeDo = () => {
 
             {/* MODAL 1 - Video Carousel */}
             <Modal show={show && modalData === 1} size="lg" onHide={handleClose} className="modal-social modal-one" centered >
-                <Modal.Header closeButton>
-                    <Modal.Title>Social Media Content</Modal.Title>
+                <Modal.Header className={styles.modalTitle}>
+                    <Modal.Title >Social Media Content</Modal.Title>
+                    <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
+                        <FontAwesomeIcon icon={faClose} className="fa-fw" />
+                    </AppButton>
                 </Modal.Header>
                 <Modal.Body>
                     <Carousel interval={null}>
@@ -65,8 +70,11 @@ const WeDo = () => {
 
             {/* MODAL 2 - Single Video */}
             <Modal show={show && modalData === 2} size="lg" onHide={handleClose} className="modal-social modal-two" centered>
-                <Modal.Header closeButton>
+                <Modal.Header className={styles.modalTitle}>
                     <Modal.Title>Social Media Content</Modal.Title>
+                    <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
+                        <FontAwesomeIcon icon={faClose} className="fa-fw" />
+                    </AppButton>
                 </Modal.Header>
                 <Modal.Body>
                     <video controls muted>
@@ -77,9 +85,12 @@ const WeDo = () => {
             </Modal>
 
             {/* MODAL 3 - Music */}
-            <Modal show={show && modalData === 3} size="xl" onHide={handleClose} className={`${ styles.modalThree} modal-social modal-three`} centered>
-                <Modal.Header closeButton>
+            <Modal show={show && modalData === 3} size="xl" onHide={handleClose} className={`${styles.modalThree} modal-social modal-three`} centered>
+                <Modal.Header className={styles.modalTitle}>
                     <Modal.Title>Music</Modal.Title>
+                    <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
+                        <FontAwesomeIcon icon={faClose} className="fa-fw" />
+                    </AppButton>
                 </Modal.Header>
                 <Modal.Body>
                     <div className={styles.insideContent}>
