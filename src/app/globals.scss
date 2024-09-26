@@ -150,12 +150,15 @@ video {
 
 .slick-next {
   z-index: 9;
+
   @media (max-width: 767.98px) {
     right: 0;
   }
 }
+
 .slick-prev {
   z-index: 9;
+
   @media (max-width: 767.98px) {
     left: 0;
   }
@@ -214,9 +217,16 @@ video {
     }
   }
 
-  .carousel-control-prev, .carousel-control-next{
-    height: 50%;
+  .carousel-control-prev,
+  .carousel-control-next {
+
+    height: 20%;
     margin: auto;
+
+    @media (max-width: 991.98px) {
+      top: -20%;
+    }
+
   }
 
   &.modal-three {
