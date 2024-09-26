@@ -20,6 +20,10 @@
     font-size: 2rem;
   }
 
+  @media (max-width: 767.98px) {
+    font-size: 1.5rem;
+  }
+
   @supports (background-clip: text) or (-webkit-background-clip: text) {
     color: transparent;
     background-clip: text;
