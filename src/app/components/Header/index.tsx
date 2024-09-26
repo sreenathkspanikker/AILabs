@@ -18,6 +18,7 @@ import Humburger from './Humburger';
 gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger plugin
 
 const Header = () => {
+  const [error, setError] = useState(false);
   const [isMenu, setMenu] = useState<boolean>(false);
   const [mounted, setMounted] = useState(false); // Track if component is mounted
   const isSmallDevice = useMediaQuery({ maxWidth: 992 });

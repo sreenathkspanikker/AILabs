@@ -55,7 +55,7 @@ const WeDo = () => {
                     </AppButton>
                 </Modal.Header>
                 <Modal.Body>
-                    <Carousel interval={null}>
+                    <Carousel interval={null} controls={false}>
                         {videosForModal1.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
                                 <video controls muted>
