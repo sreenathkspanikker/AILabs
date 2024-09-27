@@ -59,7 +59,7 @@ const MinframeAnime = () => {
                                 gsap.to(pLogoRef.current, {
                                     width: "100px",
                                     top: "12px",
-                                    left: "calc(20px + 14%)",
+                                    left: "215px",
                                     transform: "translate(0, 0)",
                                     ease: "power2.inOut",
                                 });
