@@ -23,6 +23,7 @@ const MinframeAnime = () => {
     const arrowDown = useRef<any>(null);
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
+    const isResLarge = useMediaQuery({ maxWidth: 2155 });
 
     useGSAP(() => {
         if (logoRef && locationCardsRef && pLogoRef) {
@@ -51,7 +52,7 @@ const MinframeAnime = () => {
                             position: "relative",
                             width: "165px",
                             top: "-5px",
-                            left: "20px",
+                            left: "40px",
                             transform: "translate(0, 0)",
                             ease: "power2.inOut",
                             onComplete: function () {
@@ -59,7 +60,7 @@ const MinframeAnime = () => {
                                 gsap.to(pLogoRef.current, {
                                     width: "100px",
                                     top: "12px",
-                                    left: "215px",
+                                    left: "250px",
                                     transform: "translate(0, 0)",
                                     ease: "power2.inOut",
                                 });
@@ -105,7 +106,7 @@ const MinframeAnime = () => {
                         duration: 1,
                         width: "165px",
                         top: "-5px",
-                        left: "20px",
+                        left: "40px",
                         transform: "translate(0, 0)",
                         ease: "power2.inOut",
                     });
@@ -115,7 +116,7 @@ const MinframeAnime = () => {
                         duration: 1,
                         width: "165px",
                         top: "-5px",
-                        left: "20px",
+                        left: "40px",
                         transform: "translate(0, 0)",
                         ease: "power2.inOut",
                     });
